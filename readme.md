@@ -1,5 +1,5 @@
 ## indent-string [![Build Status](https://travis-ci.org/joegesualdo/terminal-log-node.svg?branch=master)](https://travis-ci.org/joegesualdo/indent-string-js)
-> Pretty terminal logging.
+> Indent a string.
 
 ## Install
 ```
