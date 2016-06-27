@@ -1,6 +1,6 @@
 import test from 'ava';
-import @joegesualdo/indent-string from './dist'
+import indentString from './dist';
 
-test(t => {
-    t.deepEqual([1, 2], [1, 2]);
+test('Correctly indents string', t => {
+  t.deepEqual(indentString("woo", 2), "  woo");
 });
