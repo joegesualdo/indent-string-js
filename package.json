@@ -1,7 +1,7 @@
 {
   "name": "@joegesualdo/indent-string",
   "repository": "joegesualdo/indent-string-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Indent a string.",
   "main": "./dist/index.js",
   "scripts": {
@@ -13,7 +13,10 @@
     "ava": "^0.15.2",
     "distify-cli": "0.0.8"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@joegesualdo/assert": "0.0.1",
+    "@joegesualdo/is-empty-line": "0.0.1"
+  },
   "keyworkds": [
     "indent",
     "indentation",

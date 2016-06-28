@@ -1,4 +1,4 @@
-## indent-string [![Build Status](https://travis-ci.org/joegesualdo/terminal-log-node.svg?branch=master)](https://travis-ci.org/joegesualdo/indent-string-js)
+## indent-string [![Build Status](https://travis-ci.org/joegesualdo/indent-string-js.svg?branch=master)](https://travis-ci.org/joegesualdo/indent-string-js)
 > Indent a string.
 
 ## Install

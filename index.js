@@ -1,21 +1,5 @@
-const assert = {
-  type(val, type) {
-    if (typeof val !== type) {
-      throw new TypeError(`Expected '${val}' to be a '${type}', got '${typeof val}'`);
-    }
-  },
-};
-
-function isEmptyLine(str) {
-  assert.type(str, 'string');
-
-  const emptyCharacters = [
-    '\n',
-    ' ',
-  ];
-
-  return str.split('').every(ch => emptyCharacters.indexOf(ch) !== -1);
-}
+import assert from '@joegesualdo/assert';
+import isEmptyLine from '@joegesualdo/is-empty-line';
 
 export default (str, count = 2, character = ' ') => {
   assert.type(str, 'string');
