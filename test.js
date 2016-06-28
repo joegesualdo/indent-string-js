@@ -21,3 +21,7 @@ test('Throws an error if a `string` is not provided', t => {
 test('Throws an error if the custom character is not a string', t => {
   t.throws(indentString.bind(this, 'woo', 2, 2));
 });
+
+test('Does not indent empty lines', t => {
+  t.deepEqual(indentString('woo\n', 2,), '  woo\n');
+});

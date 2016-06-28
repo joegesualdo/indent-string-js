@@ -53,21 +53,36 @@ module.exports =
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
-	exports.default = indentString;
-	function indentString(str) {
+	var assert = {
+	  type: function type(val, _type) {
+	    if ((typeof val === 'undefined' ? 'undefined' : _typeof(val)) !== _type) {
+	      throw new TypeError('Expected \'' + val + '\' to be a \'' + _type + '\', got \'' + (typeof val === 'undefined' ? 'undefined' : _typeof(val)) + '\'');
+	    }
+	  }
+	};
+
+	function isEmptyLine(str) {
+	  assert.type(str, 'string');
+
+	  var emptyCharacters = ['\n', ' '];
+
+	  return str.split('').every(function (ch) {
+	    return emptyCharacters.indexOf(ch) !== -1;
+	  });
+	}
+
+	exports.default = function (str) {
 	  var count = arguments.length <= 1 || arguments[1] === undefined ? 2 : arguments[1];
 	  var character = arguments.length <= 2 || arguments[2] === undefined ? ' ' : arguments[2];
 
-	  if (typeof str !== 'string') {
-	    throw new TypeError('Expected \'input\' to be a \'string\', got \'' + (typeof str === 'undefined' ? 'undefined' : _typeof(str)) + '\'');
-	  }
-	  if (typeof character !== 'string') {
-	    throw new TypeError('Expected \'character\' to be a \'string\', got \'' + (typeof character === 'undefined' ? 'undefined' : _typeof(character)) + '\'');
-	  }
+	  assert.type(str, 'string');
+	  assert.type(character, 'string');
+
 	  return str.split('\n').map(function (line) {
+	    if (isEmptyLine(line)) return line;
 	    return '' + character.repeat(count) + line;
 	  }).join('\n');
-	}
+	};
 
 /***/ }
 /******/ ]);

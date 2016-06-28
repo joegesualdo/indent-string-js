@@ -1,9 +1,29 @@
-export default function indentString(str, count = 2, character = ' ') {
-  if (typeof str !== 'string') {
-    throw new TypeError(`Expected 'input' to be a 'string', got '${typeof str}'`);
-  }
-  if (typeof character !== 'string') {
-    throw new TypeError(`Expected 'character' to be a 'string', got '${typeof character}'`);
-  }
-  return str.split('\n').map(line => `${character.repeat(count)}${line}`).join('\n');
+const assert = {
+  type(val, type) {
+    if (typeof val !== type) {
+      throw new TypeError(`Expected '${val}' to be a '${type}', got '${typeof val}'`);
+    }
+  },
+};
+
+function isEmptyLine(str) {
+  assert.type(str, 'string');
+
+  const emptyCharacters = [
+    '\n',
+    ' ',
+  ];
+
+  return str.split('').every(ch => emptyCharacters.indexOf(ch) !== -1);
 }
+
+export default (str, count = 2, character = ' ') => {
+  assert.type(str, 'string');
+  assert.type(character, 'string');
+
+  return str.split('\n').map(line => {
+    if (isEmptyLine(line)) return line;
+    return `${character.repeat(count)}${line}`;
+  }).join('\n');
+};
+

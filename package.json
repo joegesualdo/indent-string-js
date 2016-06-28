@@ -1,7 +1,7 @@
 {
   "name": "@joegesualdo/indent-string",
   "repository": "joegesualdo/indent-string-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Indent a string.",
   "main": "./dist/index.js",
   "scripts": {
