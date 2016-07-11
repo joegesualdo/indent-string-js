@@ -8,7 +8,7 @@ $ npm install --save @joegesualdo/indent-string
 
 ## Usage
 ```javascript
-import indentString from ('@joegesualdo/indent-string')
+import indentString from '@joegesualdo/indent-string'
 
 indentString('hello', 2);
 // '  hello'
